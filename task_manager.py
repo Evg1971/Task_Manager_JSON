@@ -13,13 +13,13 @@ class TaskManager:
         if 0 <= index < len(self.tasks):
             self.tasks[index]["completed"] = True
         else:
-            raise IndexError("Invalid task index")
+            raise IndexError(f"Некорректный индекс: {index}")
 
     def remove_task(self, index: int):
         if 0 <= index < len(self.tasks):
             self.tasks.pop(index)
         else:
-            raise IndexError("Invalid task index")
+            raise IndexError(f"Некорректный индекс: {index}")
 
     def save_to_json(self, filename: str):
         with open(filename, "w") as file:
