@@ -8,9 +8,11 @@ class TaskManager:
 
     def add_task(self, description: str):
         if any(task["description"] == description for task in self.tasks):
-            raise ValueError(f"Задача с описанием {description} уже существует")
+            print(f"Внимание: Задача с описанием {description} уже существует!")
+            return False
         task = {"description": description, "completed": False}
         self.tasks.append(task)
+        return True
 
 
     def complete_task(self, index: int):
